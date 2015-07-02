@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Code of the rings clone</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/code.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+        <script src="/js/code.js"></script>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Code of the Rings Clone</span>
+                    </button>
+                    <a class="navbar-brand" href="#">Code of the Rings Clone</a>
+                </div>
+            </div>
+        </nav>
+        <div id='userform' class="panel container">
+            <form class="form-inline" role="form" id="create-user">
+                <div class="form-group">
+                    <label class="sr-only" for="bilboname">Email</label>
+                    <input type="text" class="form-control" id="bilboname" size="40" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="bilbourl">Password</label>
+                    <input type="url" class="form-control" id="bilbourl" size="40" placeholder="http://192.168.1.1:3000">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Team</button>
+            </form>
+        </div>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading"   >
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
+                            Instructions <span class="extended-instructions">(EXTENDED!!!)</span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <p>Your program receives a string of uppercase characters – the magic phrase Bilbo needs to spell out – and must output a sequence of characters, each representing an action for Bilbo to perform.
+                        These actions will have Bilbo move around in the forest, interacting with the different stones.</p>
+                        <p>The forest Bilbo is trapped works as follows:</p>
+                        <p>The forest contains 30 zones.</p>
+                        <p>Bilbo can move left and right through the zones which are all aligned. He does this when he receives a less-than <strong><</strong> or greater-than <strong>></strong> sign.</p>
+                        <p>The last zone is connected to the first zone, effectively creating a looping area.</p>
+                        <p>Each zone contains a magic stone upon which is inscribed a rune with which Bilbo can interact.</p>
+
+                        <p>Runes work as follows:</p>
+                        <p>Every rune is represented by a letter of the alphabet <strong>(A-Z)</strong> or an <strong>empty space</strong>.</p>
+                        <p>All runes start out as a space.</p>
+                        <p>Bilbo can change the value of the letter on the rune by rolling back and forth through the possibilities. He does this when he receives a plus + or minus - character.</p>
+                        <p>The letter after Z is space. The letter after space is A.</p>
+                        <p>Bilbo can trigger a rune. This will add the displayed letter to the phrase he is spelling out. He does this when he receives a dot . character.</p>
+                        <p>One rune can be triggered several times.</p>
+
+                        <p><strong>YOU WIN IF THE MAGIC PHRASE IS SPELLED OUT CORRECTLY AT THE END OF BILBO'S MOVE SEQUENCE.</strong></p>
+
+                        <p>You lose if:</p>
+                        <p>At the end of Bilbo's move sequence, the wrong message is displayed.</p>
+                        <p>Bilbo performs 4000 moves or more in the forest.</p>
+                        <p>You do not supply Bilbo with a valid sequence of actions.</p>
+
+                        <p><strong>Example:</strong></p>
+
+                        <p>If Bilbo needs to spell out the word AB, you could give him the instructions <strong>+.+..</strong> He will:</p>
+                        <p>Make the first rune go from space to A.</p>
+                        <p>Trigger the A.</p>
+                        <p>Make rune go from A to B.</p>
+                        <p>Trigger the B.</p>
+                        <p>Alternatively, you could also give him the instructions <strong>+.>++.</strong> to achieve the same result. Experiment with different tactics!</p>
+                        <div class="extended-instructions">
+                            <h4>Extended instructions</h4>
+                            <p><strong>For expert CodinGamers (don't bother with this until you've really tried the rest): Loops.</strong></p>
+                            <p>These actions are also available:</p>
+                            <ul>
+                                <li>[: If the current rune contains a space, skip all instructions up to the matching closing bracket ], otherwise continue normally.</li>
+                                <li>]: If the current rune contains a space, continue normally, otherwise perform the instructions starting from the matching opening bracket [.</li>
+                            </ul>
+                            <p>This makes it possible to have Bilbo perform more actions with less characters for your program to output.</p>
+
+                            <p>For example, AAAAAAAAAAAAAAAAAAAAAAAAAA (A x26) can be achieved with a simple
+                            <strong>+..........................</strong>as well as with <strong>+>-[<.>-].</strong></p>
+
+                            <p>Experiment with different techniques, if you have the guts!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" >
+                    <h4 class="panel-title">Rankings</h4>
+                </div>
+                <div class="panel panel-body">
+                    <table class="table table-hover table-condensed">
+                        <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Team</th>
+                            <th>Score</th>
+                            <th>Solved</th>
+                            <th>Total length</th>
+                        </tr>
+                        </thead>
+                        <tbody  id="ranking-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+#collapseOne p {
+    font-size: 0.9em;
+    line-height: 1.2em;
+    margin: 0.3em;
+}
+
+.panel {
+    margin: 10px;
+}
+
+.panel-title a {
+    display: block;
+    padding: 10px 15px;
+    margin: -10px -15px;
+    cursor: pointer;
+}
+
+.extended-instructions {
+    display: none;
+}
