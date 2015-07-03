@@ -1,6 +1,6 @@
 This is a copy of the coding game competition, you can find the original [here](https://www.codingame.com/ide/1568342dc103267f7770ecf72ae2311f306c8b8)
 
-You will need a sample server in java can be found [here](clients/java/src/main/java/Example). But you can use any other language to play.
+You will need a sample server in java can be found [here](/clients/java/src/main/java/Example.java). But you can use any other language to play.
 
 To play you need to create a server that will be registered with the Game Engine that will call your server for the responses.
 
